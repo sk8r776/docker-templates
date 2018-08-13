@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://raw.githubusercontent.com/sk8r776/docker-templates/master/sk8r776/plexpass.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>MediaApp:Video MediaApp:Music MediaApp:Photos MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
+  <Name>sk8r776-plex</Name>
+  <Description>
+  </Description>
+  <Overview>
+    This will install the latest realease you are entiled to including plexpass.
+  </Overview>
+  <Registry>https://hub.docker.com/r/plexinc/pms-docker/</Registry>
+  <GitHub>https://github.com/plexinc/pms-docker</GitHub>
+  <Repository>plexinc/pms-docker</Repository>
+  <Project>https://plex.tv/</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>Timezone</Name>
+      <Value>TZ</Value>
+    </Variable>
+    <Variable>
+      <Name>Claim Code</Name>
+      <Value>PLEX_CLAIM</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:32400]/web/index.html</WebUI>
+  <Icon>https://raw.githubusercontent.com/sk8r776/docker-templates/master/sk8r776/images/plex-icon.png</Icon>
+  <ExtraParams></ExtraParams>
+</Containers>
